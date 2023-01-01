@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GLTF Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    #viewer {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <div id="viewer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.8.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-gltf-model-viewer@0.6.0"></script>
+  <script>
+    const viewer = new GLTFModelViewer.Viewer('#viewer', {
+      cameraControls: true,
+      leftControls: false
+    });
+    viewer.setModel({
+      src: './Falcon9.glb'
+    });
+  </script>
+</body>
+</html>
